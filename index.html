@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- ES6 Syntax
+    ES - EcmaScript -->
+
+    <input type="text" id="searchValue">
+    <button onclick="search()">Search</button>
+    <div id="listGroup"></div>
+    <script>
+        var one = 1
+        let two = 2
+        let three = 3
+        const food = "Amala"
+        // const food = "Iyan"
+        three = 98
+        // food = "Dodo"
+        // console.log(food);
+        function chop(nh) { console.log('I go chop food') }
+
+        setTimeout(() => {
+            console.log('yes');
+        }, 3000)
+
+        const add = (x, y) => {
+            return x + y;
+        }
+
+        // if (2 == 2) {
+        //     return true
+        // } else {
+        //     return false
+        // }
+
+        console.log(add(5, 3))
+        // Filter, sort, find
+
+        const numbers = [23, 12, 7, 1, 83, 9, 103, 26]
+        console.log(numbers)
+        const firstEven = numbers.find((no) => {
+            return no % 2 == 0
+        })
+        const firstEven2 = numbers.find(no => no % 2 == 0)
+
+        const allEven = numbers.filter((nos) => {
+            return nos % 2 == 0
+        })
+        const allEven2 = numbers.filter(nos => nos % 2 == 0)
+        const sortedNumbers = numbers.sort((a, b) => b - a)
+        let word = "Tolu"
+        console.log("Tolu")
+        console.log(sortedNumbers)
+        // +ive result b comes before a 
+        // -ive result a comes before b
+
+        console.log(firstEven2)
+        console.log(allEven)
+        const fruits = ["Banana", "Orange", "Grapes", "Mango", "Cashew", "Cocoa"]
+        const display = (fruitArray=[]) => {
+            listGroup.innerHTML = ""
+            console.log(fruitArray.length)
+            // listGroup.innerHTML = "<ol>"
+            if (fruitArray.length) {
+                fruitArray.map((fruitItem, index) => {
+                    listGroup.innerHTML += `<p>${index + 1}. ${fruitItem}</p>`
+                })
+            }
+            else {
+                fruits.map((fruitItem, index) => {
+                    listGroup.innerHTML += `<p>${index + 1}. ${fruitItem}</p>`
+                })
+            }
+            // listGroup.innerHTML = "</ol>"
+        }
+        display()
+        const search = () => {
+            const searchParams = document.getElementById("searchValue").value
+            console.log(searchParams)
+            const filteredFruit = fruits.filter(item => item.toLowerCase().includes(searchParams.toLowerCase()))
+            console.log(filteredFruit)
+            display(filteredFruit)
+        }
+    </script>
+</body>
+
+</html>
